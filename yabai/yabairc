@@ -1,0 +1,98 @@
+# sudo yabai --load-sa
+# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m config layout bsp
+yabai -m config window_placement second_child
+# Space labels
+# yabai -m space 1 --label main
+yabai -m space 1 --label web
+yabai -m space 2 --label editors
+yabai -m space 3 --label chat
+yabai -m space 4 --label music
+yabai -m space 5 --label terminal
+yabai -m space 6 --label vscode
+yabai -m space 7 --label VM
+# yabai -m space 8 --label terminal
+
+# sketchybar config
+# yabai -m config external_bar all:35:0
+# yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+# yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
+# yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+
+yabai -m rule --add app="^Google Chrome$" space=web
+yabai -m rule --add app="^Firefox$" space=web
+yabai -m rule --add app="^Discord$" space=chat
+yabai -m rule --add app="^Spotify$" space=music
+yabai -m rule --add app="^Sublime Text$" space=editors
+yabai -m rule --add app="^Visual Studio Code$" space=vscode
+yabai -m rule --add app="^RustRover$" space=vscode
+# yabai -m rule --add app="^Google Chrome$" space=immersion
+# yabai -m rule --add app="^Anki$" space=anki
+yabai -m rule --add app="^terminal$" space=terminal
+yabai -m rule --add app="^Alacritty$" space=terminal
+yabai -m rule --add app="^Utm" space=VM
+
+# Window rules
+yabai -m rule --add app="^(Calculator|System Preferences|System Settings|Archive Utility|Finder)$" manage=off
+# Anki card preview
+yabai -m rule --add title="^Preview" manage=off
+yabai -m rule --add title="^Preferences" manage=off
+yabai -m rule --add title="^Settings" manage=off
+yabai -m rule --add title="^Messenger" manage=off
+yabai -m rule --add app="^DaVinci Resolve$" manage=off
+yabai -m rule --add title="^Logi Options+$" manage=off 
+yabai -m rule --add app="^Steam$" manage=off
+yabai -m rule --add app="^CrossOver$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
+yabai -m rule --add app="^TextEdit$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^League of Legends$" manage=off
+yabai -m rule --add app="^Numi$" manage=off
+yabai -m rule --add app="^Kawa$" manage=off
+yabai -m rule --add app="^Weather$" manage=off
+yabai -m rule --add app="^anki$" manage=off
+yabai -m rule --add label="Software Update" title="Software Update" manage=off
+yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
+
+# Set all padding and gaps to 20pt (default: 0)
+yabai -m config top_padding    10
+yabai -m config bottom_padding 16
+yabai -m config left_padding   16
+yabai -m config right_padding  16
+yabai -m config window_gap     16
+
+# Useful optional stuff
+yabai -m config focus_follows_mouse autofocus
+# yabai -m config window_border_width 1
+# yabai -m config active_window_border_color  0xBF999999
+
+# modify window shadows (default: on, options: on, off, float)
+# example: show shadows only for floating windows
+yabai -m config window_shadow float
+
+# window opacity (default: off)
+# example: render all unfocused windows with 90% opacity
+yabai -m config window_opacity off
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.95
+
+# Drag/resizes Windows with mouse without having to grab the edges first by holding ctrl
+yabai -m config mouse_modifier ctrl
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m signal --add event=mission_control_exit action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_added action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_removed action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_created action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_destroyed action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_focused action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_moved action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_resized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_minimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_deminimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+
+# yankyborder config
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+
+# yabai -m rule --add app="^DaVinci Resolve$" space=main
