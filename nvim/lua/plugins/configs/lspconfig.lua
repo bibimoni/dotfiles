@@ -18,7 +18,8 @@ M.on_attach = function(client, bufnr)
   end
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
+-- M.capabilities = vim.lsp.protocol.make_client_capabilities()
+M.capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 M.capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
@@ -80,5 +81,14 @@ require("lspconfig").biome.setup {
 require("lspconfig").ts_ls.setup({
   on_attach = M.on_attach,
   capabilities = M.capabilities
+})
+-- require("lspconfig").clangd.setup({
+--   on_attach = M.on_attach,
+--   capabilities = M.capabilities,
+-- })
+require("lspconfig").harper_ls.setup({
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  filetypes = { 'c', 'cpp'},
 })
 return M
