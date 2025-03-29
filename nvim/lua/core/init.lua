@@ -22,6 +22,7 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.softtabstop = 2
 opt.relativenumber = true
+opt.wrap = false
 
 opt.fillchars = { eob = " " }
 opt.ignorecase = true
@@ -145,9 +146,17 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    opt.textwidth = 74
+  end
+})
+
 -------------------------------------- commands ------------------------------------------
 local new_cmd = vim.api.nvim_create_user_command
 
 new_cmd("NvChadUpdate", function()
   require "nvchad.updater"()
 end, {})
+
