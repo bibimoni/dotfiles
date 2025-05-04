@@ -6,25 +6,6 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
   vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
   vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
-  local groups = {
-    "BufferLineFill",
-    "BufferLineBackground",
-    "BufferLineBackgroundVisible",
-    "BufferLineBackgroundSelected",
-    "BufferLineBuffer",
-    "BufferLineBufferVisible",
-    "BufferLineBufferSelected",
-    "BufferLineSeparator",
-    "BufferLineSeparatorVisible",
-    "BufferLineSeparatorSelected",
-    "BufferLineIndicatorSelected",
-    "BufferLineIndicatorVisible",
-    "BufferLineTabClose",
-    "BufferLineDevIconDefault",
-  }
-  for _, grp in ipairs(groups) do
-    vim.api.nvim_set_hl(0, grp, { bg = "none" })
-  end
 end
 
 ColorMyPencils()

@@ -21,9 +21,14 @@ vim.keymap.set("i", "<A-j>", "<Down>", { noremap = true, silent = true })
 vim.keymap.set("i", "<A-k>", "<Up>", { noremap = true, silent = true })
 vim.keymap.set("i", "<A-l>", "<Right>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true })
+vim.keymap.set("n", "<A-h>", "<C-w>h", { noremap = true })
+vim.keymap.set("n", "<A-j>", "<C-w>j", { noremap = true })
+vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true })
+vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true })
 
 vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true })
+
+vim.keymap.set("n", "<leader>v", vim.cmd.vsplit, { silent = true });
+vim.keymap.set("n", "<leader>h", vim.cmd.split, { silent = true });
+
+vim.keymap.set("n", "<C-c>", "<Cmd>%y+<CR>");
