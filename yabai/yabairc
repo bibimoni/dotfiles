@@ -6,11 +6,10 @@ yabai -m config window_placement second_child
 # yabai -m space 1 --label main
 yabai -m space 1 --label web
 yabai -m space 2 --label editors
-yabai -m space 3 --label chat
-yabai -m space 4 --label music
-yabai -m space 5 --label terminal
-yabai -m space 6 --label vscode
-yabai -m space 7 --label VM
+yabai -m space 3 --label terminal
+yabai -m space 4 --label chat
+yabai -m space 5 --label music
+yabai -m space 6 --label VM
 # yabai -m space 8 --label terminal
 
 # sketchybar config
@@ -24,12 +23,12 @@ yabai -m rule --add app="^Firefox$" space=web
 yabai -m rule --add app="^Discord$" space=chat
 yabai -m rule --add app="^Spotify$" space=music
 yabai -m rule --add app="^Sublime Text$" space=editors
-yabai -m rule --add app="^Visual Studio Code$" space=vscode
-yabai -m rule --add app="^RustRover$" space=vscode
+yabai -m rule --add app="^Visual Studio Code$" space=editors
+yabai -m rule --add app="^RustRover$" space=editors
 # yabai -m rule --add app="^Google Chrome$" space=immersion
 # yabai -m rule --add app="^Anki$" space=anki
 yabai -m rule --add app="^terminal$" space=terminal
-yabai -m rule --add app="^Alacritty$" space=terminal
+yabai -m rule --add title="^Alacritty$" space=terminal
 yabai -m rule --add app="^Utm" space=VM
 
 # Window rules

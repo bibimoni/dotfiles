@@ -25,10 +25,10 @@ ctrl + shift - c : yabai -m window --display 3 --focus # laptop
 
 # Move focus container to space
 ctrl + alt - 1 : yabai -m window --space 1 --focus # main 
-ctrl + alt - 2 : yabai -m window --space 2 --focus # editors
-ctrl + alt - 3 : yabai -m window --space 3 --focus # chat
-ctrl + alt - 4 : yabai -m window --space 4 --focus # music
-ctrl + alt - 5 : yabai -m window --space 5 --focus # terminal 
+ctrl + alt - 2 : yabai -m window --space 2 --focus # edtiors 
+ctrl + alt - 3 : yabai -m window --space 3 --focus # terminal
+ctrl + alt - 4 : yabai -m window --space 4 --focus # chat 
+ctrl + alt - 5 : yabai -m window --space 5 --focus # music 
 ctrl + alt - 6 : yabai -m window --space 6 --focus # vscode
 ctrl + alt - 7 : yabai -m window --space 7 --focus # VM
 ctrl + alt - 8 : yabai -m window --space 8 --focus #
