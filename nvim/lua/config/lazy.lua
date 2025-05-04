@@ -69,3 +69,4 @@ require("lazy").setup({
 require("after.plugins.lsp")
 require("after.plugins.nvim-cmp")
 require("after.plugins.presence")
+require("after.plugins.mini")

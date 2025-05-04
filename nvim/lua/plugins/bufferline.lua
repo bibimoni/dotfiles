@@ -49,7 +49,7 @@ return {
       noremap = true,
       silent = true,
     })
-    vim.keymap.set("n", "<leader>x", "<Cmd>BufferLinePickClose<CR>", {
+    vim.keymap.set("n", "<C-x>", "<Cmd>BufferLinePickClose<CR>", {
       desc = "Pick buffer to close",
       noremap = true,
       silent = true,

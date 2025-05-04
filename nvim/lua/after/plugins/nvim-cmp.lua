@@ -3,8 +3,10 @@ require('luasnip.loaders.from_vscode').lazy_load()
 
 cmp.setup({
   sources = {
-    { name = 'luasnip' },
+    { name = 'path' },
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' }
   },
   snippet = {
     expand = function(args)
@@ -19,7 +21,7 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
 
     -- `Enter` key to confirm completion
-    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
     -- Ctrl+Space to trigger completion menu
     -- ['<C-b>'] = cmp.mapping.complete(),
