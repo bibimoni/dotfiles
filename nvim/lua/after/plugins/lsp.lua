@@ -108,4 +108,10 @@ require('mason-lspconfig').setup({
       require('lspconfig')[server_name].setup({})
     end,
   },
+
+  -- clangd = function()
+  --   require('lspconfig').clangd.setup({
+  --
+  --   })
+  -- end,
 })

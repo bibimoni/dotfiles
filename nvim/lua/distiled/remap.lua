@@ -27,6 +27,12 @@ vim.keymap.set("n", "<A-k>", "<C-w>k", { noremap = true })
 vim.keymap.set("n", "<A-l>", "<C-w>l", { noremap = true })
 
 vim.keymap.set("t", "<C-x>", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set("t", "jk", [[<C-\><C-n>]], { noremap = true })
+vim.keymap.set('t', '<A-h>', [[<Cmd>wincmd h<CR>]], { noremap = true })
+vim.keymap.set('t', '<A-j>', [[<Cmd>wincmd j<CR>]], { noremap = true })
+vim.keymap.set('t', '<A-k>', [[<Cmd>wincmd k<CR>]], { noremap = true })
+vim.keymap.set('t', '<A-l>', [[<Cmd>wincmd l<CR>]], { noremap = true })
+vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], { noremap = true })
 
 vim.keymap.set("n", "<leader>v", vim.cmd.vsplit, { silent = true });
 vim.keymap.set("n", "<leader>h", vim.cmd.split, { silent = true });

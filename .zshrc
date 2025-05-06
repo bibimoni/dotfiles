@@ -1,8 +1,16 @@
-export ZDOTDIR=$HOME/.config
 export ZSH=$HOME/.oh-my-zsh
 export PATH=$PATH:$HOME/codeStuff/rust/rustcp
+export PATH=$PATH:$HOME/.config
+export PATH=$PATH:$HOME/Dev/online-judge-supporter/src
+echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+
+ln $HOME/.config/.clangd ~/.clangd
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.config}/zinit/zinit.git"
+
+# eval "$(~/symlink.sh)"
 
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
@@ -41,8 +49,17 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 alias ls='eza --icons=always'
-alias g++-14="g++"
+# alias g++-14="g++"
 alias sub="sublime"
+function mkcd
+{
+  dir="$*";
+  mkdir -p "$dir" && cd "$dir";
+}
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"

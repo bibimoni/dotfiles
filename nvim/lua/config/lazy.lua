@@ -70,3 +70,6 @@ require("after.plugins.lsp")
 require("after.plugins.nvim-cmp")
 require("after.plugins.presence")
 require("after.plugins.mini")
+require("after.plugins.undotree")
+require("after.plugins.telescope-filebrowser");
+require("after.plugins.luasnip")

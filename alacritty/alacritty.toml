@@ -25,6 +25,3 @@ normal.family = "JetBrainsMono Nerd Font"
 
 size = 20
  
-key_bindings = [
-  { key = "H",        mods = "Control",    chars = "\x{1B}h" },
-]
