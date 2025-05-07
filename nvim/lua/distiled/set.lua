@@ -29,3 +29,5 @@ vim.opt.updatetime = 50
 -- vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+vim.g.mousescroll = "ver:1,hor:2"
