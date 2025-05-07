@@ -4,12 +4,29 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("n", "x", "\"_x");
 
 vim.keymap.set("n", "Y", "yg$")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "<C-d>",
+  '<Cmd>lua vim.cmd("normal! <C-d>"); ' ..
+  'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>'
+  , { noremap = true })
+
+vim.keymap.set("n", "<C-u>",
+  '<Cmd>lua vim.cmd("normal! <C-u>"); ' ..
+  'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>'
+  , { noremap = true })
+
+vim.keymap.set("n", "n",
+  '<Cmd>lua vim.cmd("normal! n"); ' ..
+  'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>'
+  , { noremap = true })
+
+vim.keymap.set("n", "N",
+  '<Cmd>lua vim.cmd("normal! N"); ' ..
+  'MiniAnimate.execute_after("scroll", "normal! zvzz")<CR>'
+  , { noremap = true })
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
