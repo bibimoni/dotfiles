@@ -20,8 +20,8 @@ option_as_alt = "Both"
 
 [font]
 # normal.family = "MesloLGS Nerd Font Mono"
-# normal.family = "UbuntuMono Nerd Font"
-normal.family = "JetBrainsMono Nerd Font"
+normal.family = "UbuntuMono Nerd Font"
+# normal.family = "JetBrainsMono Nerd Font"
 
 size = 20
  

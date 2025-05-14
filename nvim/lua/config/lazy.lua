@@ -74,3 +74,4 @@ require("after.plugins.undotree")
 require("after.plugins.telescope-filebrowser");
 require("after.plugins.luasnip")
 require("after.plugins.lspsaga")
+require("after.plugins.auto-save")
