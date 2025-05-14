@@ -55,3 +55,5 @@ vim.keymap.set("n", "<leader>v", vim.cmd.vsplit, { silent = true });
 vim.keymap.set("n", "<leader>h", vim.cmd.split, { silent = true });
 
 vim.keymap.set("n", "<C-c>", "<Cmd>%y+<CR>");
+
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float);

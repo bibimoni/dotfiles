@@ -1,6 +1,13 @@
 local function window()
   return vim.api.nvim_win_get_number(0)
 end
+local function lspsaga_winbar()
+  local ok, bar = pcall(require('lspsaga.symbol.winbar').get_bar)
+  if ok and bar ~= nil then
+    return bar
+  end
+  return ''
+end
 
 return {
   "nvim-lualine/lualine.nvim",
@@ -9,7 +16,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "gruvbox",
+        theme = "seoul256",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         globalstatus = true,

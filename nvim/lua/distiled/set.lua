@@ -31,3 +31,5 @@ vim.opt.updatetime = 50
 vim.g.mapleader = " "
 
 vim.g.mousescroll = "ver:1,hor:2"
+
+vim.opt.rtp:append("/opt/homebrew/opt/fzf")
