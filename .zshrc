@@ -6,11 +6,13 @@ echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc
 export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
-ln $HOME/.config/.clangd ~/.clangd
+if [ !-d "$HOME/.clangd" ]; then
+  ln $HOME/.config/.clangd ~/.clangd
+fi
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.config}/zinit/zinit.git"
 
-# eval "$(~/symlink.sh)"
+eval "$(~/.config/symlink.sh)"
 
 if [ ! -d "$ZINIT_HOME" ]; then
   mkdir -p "$(dirname $ZINIT_HOME)"
