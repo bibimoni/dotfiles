@@ -20,7 +20,17 @@ ls.add_snippets("cpp", {
     t('freopen("'), i(1), t('.in", "r", stdin);'),
     t({ "", 'freopen("' }), i(1), t('.out", "w", stdout);'),
   }),
+  s("multi", {
+    t({ 'int tt;', 'cin >> tt;', 'while (tt--) {' }),
+    t({ '' }),
+    i(0),
+    t({ '}' })
+  }),
 
+
+  s("pb", { t("push_back("), i(0), t(")") }),
+  s("vi", { t("vector<int"), i(0), t(">") }),
+  s("inclns", { t({ "#include <bits/stdc++.h>", "using namespace std;" }), i(0) }),
   s("fori0", { t("for (int i = 0; i < n"), i(0), t("; i++)") }),
   s("fori1", { t("for (int i = 1; i <= n"), i(0), t("; i++)") }),
   s("forj0", { t("for (int j = 0; j < n"), i(0), t("; j++)") }),

@@ -1,6 +1,7 @@
 require('mini.indentscope').setup()
-require('mini.animate').setup()
+-- require('mini.animate').setup()
 require('mini.sessions').setup()
+require('mini.ai').setup()
 local miniclue = require('mini.clue')
 miniclue.setup({
   triggers = {

@@ -16,7 +16,8 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "seoul256",
+        -- theme = "seoul256",
+        theme = "OceanicNext",
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         globalstatus = true,

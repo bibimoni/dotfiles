@@ -7,6 +7,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'nvim_lsp' },
+    { name = 'render-markdown' },
     { name = 'buffer' }
   },
   snippet = {

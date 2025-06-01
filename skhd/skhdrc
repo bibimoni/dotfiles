@@ -71,24 +71,14 @@ ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 0 
 
 # Unused
-# ctrl - 1 : yabai -m display --focus 3
+ctrl + shift - 3 : yabai -m window  --display 3 --focus 
+ctrl + shift - 1 : yabai -m window  --display 1 --focus 
+ctrl + shift - 2 : yabai -m window  --display 2 --focus 
 
-# Unused
-# ctrl - 1 : yabai -m display --focus 3
-
-# Unused
-# ctrl - 1 : yabai -m display --focus 3
-
-# Unused
-# ctrl - 1 : yabai -m display --focus 3
-
-# Unused
-# ctrl - 1 : yabai -m display --focus 3
-
-# Unused
-# ctrl - 1 : yabai -m display --focus 3
-# ctrl - 2 : yabai -m display --focus 1
-# ctrl - 3 : yabai -m display --focus 2
+# Focus display
+ctrl + alt - 3 : yabai -m window --display 3 --focus
+ctrl + alt - 2 : yabai -m window --display 2 --focus
+ctrl + alt - 1 : yabai -m window --display 1 --focus
 
 # Create space on the active display
 ctrl + shift - n : yabai -m space --create

@@ -68,10 +68,10 @@ require("lazy").setup({
 
 require("after.plugins.lsp")
 require("after.plugins.nvim-cmp")
-require("after.plugins.presence")
+-- require("after.plugins.presence")
 require("after.plugins.mini")
 require("after.plugins.undotree")
 require("after.plugins.telescope-filebrowser");
 require("after.plugins.luasnip")
 require("after.plugins.lspsaga")
-require("after.plugins.auto-save")
+require("after.plugins.scroll")

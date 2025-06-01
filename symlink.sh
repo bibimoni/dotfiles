@@ -2,7 +2,7 @@
 
 DIR_EXTERNAL_SSD="/Volumes/External disk/"
 
-echo "ran symlink script"
+# echo "ran symlink script"
 
 DIR1="Study materials";
 if [[ ! -d ${HOME}/$DIR1 ]]; then 
@@ -21,4 +21,8 @@ fi
 
 if [[ ! -f ${HOME}/.tmux.conf ]]; then
   ln -s "${HOME}/.config/.tmux.conf" "${HOME}"
+fi
+
+if [[ ! -f ${HOME}/.clangd ]]; then
+  ln -s "${HOME}/.config/.clangd" "${HOME}"
 fi
