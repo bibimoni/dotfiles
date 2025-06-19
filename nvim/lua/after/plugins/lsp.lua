@@ -102,9 +102,12 @@ vim.diagnostic.config({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls' },
+  ensure_installed = { 'lua_ls', 'ts_ls' },
   handlers = {
     function(server_name)
+      if server_name == 'rust_analyzer' then
+        return
+      end
       require('lspconfig')[server_name].setup({})
     end,
   },
@@ -141,6 +144,25 @@ require('mason-lspconfig').setup({
       }
     }
   end,
+  ["rust-analyzer"] = function()
+    require("lspconfig").rust_analyzer.setup({
+      settings = {
+        ["rust-analyzer"] = {
+          completion = {
+            callable = { snippets = "fill_arguments" },
+            fullFunctionSignatures = { enable = true },
+          },
+          procMacro = { enable = true },
+          check = {
+            command = "clippy",
+          },
+          cargo = {
+            features = "all",
+          },
+        },
+      }
+    })
+  end
   -- clangd = function()
   --   require('lspconfig').clangd.setup({
   --

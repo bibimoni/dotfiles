@@ -1,3 +1,9 @@
+require('lspsaga').setup({
+  symbol_in_winbar = {
+    enable = false,
+    ignore_filetypes = { 'html', 'markdown', 'text' }
+  }
+})
 vim.keymap.set("n", "<leader>ca", "<CMD>Lspsaga code_action<CR>", { desc = "open Lspsaga codeaction" });
 vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<cr>', { desc = "Lspsaga hover" })
 vim.keymap.set('n', '<leader>ol', '<CMD>Lspsaga outline<CR>', { desc = "open outline" })
