@@ -62,6 +62,3 @@ function mkcd
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
-export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
