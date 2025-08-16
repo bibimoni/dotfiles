@@ -20,11 +20,11 @@ if [[ ! -d ${HOME}/$DIR3 ]]; then
 fi
 
 # ln -s /Volumes/External\ disk/Docker/vms ~/Library/Containers/com.docker.docker/Data/vms
-DIR4="Docker/vms"
-DIR4_TO="$HOME/Library/Containers/com.docker.docker/Data/vms"
-if [[ ! -d $DIR4_TO ]]; then
-  ln -s "${DIR_EXTERNAL_SSD}$DIR4" "$DIR4_TO"
-fi
+# DIR4="Docker/vms"
+# DIR4_TO="$HOME/Library/Containers/com.docker.docker/Data/vms"
+# if [[ ! -d $DIR4_TO ]]; then
+#   ln -s "${DIR_EXTERNAL_SSD}$DIR4" "$DIR4_TO"
+# fi
 
 if [[ ! -f ${HOME}/.tmux.conf ]]; then
   ln -s "${HOME}/.config/.tmux.conf" "${HOME}"

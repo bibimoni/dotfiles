@@ -49,6 +49,7 @@ require("lazy").setup({
     -- color schemes
     { "morhetz/gruvbox" },
     { "ellisonleao/gruvbox.nvim" },
+    { "sainnhe/gruvbox-material" },
     { "folke/tokyonight.nvim" },
     { "navarasu/onedark.nvim" },
     {
@@ -58,13 +59,22 @@ require("lazy").setup({
     { "shaunsingh/moonlight.nvim" },
     { "rebelot/kanagawa.nvim" },
     { "EdenEast/nightfox.nvim" },
+    { "sainnhe/everforest" },
+    { "junegunn/seoul256.vim" },
+    { "ku1ik/vim-monokai" },
+    { 'projekt0n/github-nvim-theme', name = 'github-theme' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "habamax" } },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- checker = { enabled = true },
 })
+
+package.preload["nvim-web-devicons"] = function()
+  require("mini.icons").mock_nvim_web_devicons()
+  return package.loaded["nvim-web-devicons"]
+end
 
 require("after.plugins.lsp")
 require("after.plugins.nvim-cmp")
@@ -75,3 +85,5 @@ require("after.plugins.telescope-filebrowser");
 require("after.plugins.luasnip")
 require("after.plugins.lspsaga")
 require("after.plugins.scroll")
+require("after.plugins.color")
+require("after.plugins.virt-column")
