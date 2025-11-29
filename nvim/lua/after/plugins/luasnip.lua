@@ -5,13 +5,15 @@ local t = ls.text_node
 local i = ls.insert_node
 local rep = require("luasnip.extras").rep
 
+require("luasnip.loaders.from_snipmate").load({ paths = "~/.config/nvim/latex_snippets/" })
+
 ls.add_snippets("cpp", {
   s("basic", {
     t({ "/**", " * Author: distiled", " */" }),
     t({ "", "#include<bits/stdc++.h>", "using namespace std;", "" }),
     t({ "", "#ifdef DEBUG", '#include </Users/distiled/codeStuff/templates/debug.h>', "#else", "#define dbg(x...)",
       "#endif" }),
-    t({ "", "#define int int64_t", "" }),
+    t({ "", "// #define int int64_t", "" }),
     t({ "", "signed main() {", "  ios::sync_with_stdio(false);", "  cin.tie(0);", "  " }),
     i(0),
     t({ "", "}" })

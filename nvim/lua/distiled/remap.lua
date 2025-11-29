@@ -1,11 +1,12 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = '\\'
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("n", "x", "\"_x");
-
+vim.keymap.set("i", "<C-Enter>", "copilot#Accept('<CR>')", { silent = true, expr = true })
 vim.keymap.set("n", "Y", "yg$")
 
 -- vim.keymap.set("n", "<C-d>",
@@ -57,3 +58,69 @@ vim.keymap.set("n", "<leader>h", vim.cmd.split, { silent = true });
 vim.keymap.set("n", "<C-c>", "<Cmd>%y+<CR>");
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float);
+vim.keymap.set("n", "<C-s>", function()
+  require("telescope.builtin").spell_suggest(require("telescope.themes").get_cursor({
+    previewer = false,
+    layout_config = {
+      width = 50,
+      height = 15,
+    }
+  })
+  )
+end, { remap = true })
+
+vim.cmd [[
+  augroup _general_settings
+    autocmd!
+    autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
+    autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200})
+    autocmd BufWinEnter * :set formatoptions-=cro
+    autocmd FileType qf set nobuflisted
+  augroup end
+
+  augroup _git
+    autocmd!
+    autocmd FileType gitcommit setlocal wrap
+    autocmd FileType gitcommit setlocal spell
+  augroup end
+
+  augroup _markdown
+    autocmd!
+    autocmd FileType markdown setlocal wrap
+    autocmd FileType markdown setlocal spell
+  augroup end
+
+  augroup _latex
+    autocmd!
+    autocmd FileType tex setlocal wrap
+    autocmd FileType tex setlocal spell
+  augroup end
+
+  augroup _auto_resize
+    autocmd!
+    autocmd VimResized * tabdo wincmd =
+  augroup end
+
+  augroup _alpha
+    autocmd!
+    autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
+  augroup end
+]]
+
+-- vim.cmd [[
+--   " VimTeX highlight groups
+--   hi texCmd guifg=#ad3da4 guibg=NONE gui=NONE ctermfg=127 ctermbg=NONE cterm=NONE
+--   hi! link texMathEnvArgName texEnvArgName
+--   hi! link texMathZone LocalIdent
+--   hi! link texMathZoneEnv texMathZone
+--   hi! link texMathZoneEnvStarred texMathZone
+--   hi! link texMathZoneX texMathZone
+--   hi! link texMathZoneXX texMathZone
+--   hi! link texMathZoneEnsured texMathZone
+--
+--   " Small tweaks
+--   hi! link QuickFixLine Normal
+--   hi! link qfLineNr Normal
+--   hi! link EndOfBuffer LineNr
+--   hi! link Conceal LocalIdent
+-- ]]

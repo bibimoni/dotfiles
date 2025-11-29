@@ -26,6 +26,12 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
+
+    -- Latex
+    { "lervag/vimtex" },     -- essential for LaTeX; Vimscript
+    { "kdheepak/cmp-latex-symbols" },
+    { "jbyuki/nabla.nvim" }, -- show symbols in editor
+
     { 'VonHeikemen/lsp-zero.nvim' },
 
     { 'neovim/nvim-lspconfig' },
@@ -47,6 +53,7 @@ require("lazy").setup({
     { 'rafamadriz/friendly-snippets' },
 
     -- color schemes
+    { 'arzg/vim-colors-xcode' },
     { "morhetz/gruvbox" },
     { "ellisonleao/gruvbox.nvim" },
     { "sainnhe/gruvbox-material" },
@@ -71,13 +78,54 @@ require("lazy").setup({
   -- checker = { enabled = true },
 })
 
-package.preload["nvim-web-devicons"] = function()
-  require("mini.icons").mock_nvim_web_devicons()
-  return package.loaded["nvim-web-devicons"]
-end
+-- package.preload["nvim-web-devicons"] = function()
+--   require("mini.icons").mock_nvim_web_devicons()
+--   require("nvim-web-devicons").setup({
+--     default = true,
+--     override = {
+--       ["js"] = { icon = "", color = "#ebcb8b", name = "js" },
+--       ["ts"] = { icon = "", color = "#519aba", name = "ts" },
+--       ["jsx"] = { icon = "", color = "#519aba", name = "jsx" },
+--       ["tsx"] = { icon = "", color = "#135564", name = "tsx" },
+--
+--       -- CSS / Styling
+--       ["css"] = { icon = "", color = "#519aba", name = "css" },
+--       ["scss"] = { icon = "", color = "#ea6962", name = "scss" },
+--       ["html"] = { icon = "", color = "#e06c75", name = "html" },
+--
+--       -- Backend / Config
+--       ["json"] = { icon = "", color = "#ebcb8b", name = "json" },
+--       ["lua"] = { icon = "", color = "#51a0cf", name = "lua" },
+--       ["go"] = { icon = "", color = "#519aba", name = "go" },
+--       ["py"] = { icon = "", color = "#ffbc2b", name = "py" },
+--
+--       ["Dockerfile"] = { icon = "", color = "#458588", name = "Dockerfile" },
+--       ["docker-compose.yml"] = { icon = "", color = "#458588", name = "Dockerfile" },
+--
+--       [".gitignore"] = { icon = "", color = "#f44747", name = "GitIgnore" },
+--     }
+--   })
+--
+--   require("neo-tree").setup({
+--     default_component_configs = {
+--       icon = {
+--         folder_closed = "", -- The "Solid" folder icon (looks more like VS Code)
+--         folder_open = "",
+--         folder_empty = "",
+--         default = "",
+--       },
+--       name = {
+--         highlight_opened_files = true, -- Highlight open files with the icon color
+--       }
+--     }
+--   })
+--   return package.loaded["nvim-web-devicons"]
+-- end
 
+require("after.plugins.surround")
 require("after.plugins.lsp")
 require("after.plugins.nvim-cmp")
+require("after.plugins.tex")
 -- require("after.plugins.presence")
 require("after.plugins.mini")
 require("after.plugins.undotree")

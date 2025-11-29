@@ -29,7 +29,24 @@ local kind_icons = {
   Operator = "󰆕",
   TypeParameter = "󰅲",
 }
-
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol',          -- show only symbol annotations
+      maxwidth = {
+        menu = 50,              -- leading text (labelDetails)
+        abbr = 50,              -- actual suggestion item
+      },
+      ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+      show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+      before = function(entry, vim_item)
+        -- ...
+        return vim_item
+      end
+    })
+  }
+}
 cmp.setup({
   sources = {
     { name = 'luasnip' },
@@ -46,7 +63,6 @@ cmp.setup({
   },
 
   mapping = cmp.mapping.preset.insert({
-    -- Navigate between completion items
     ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = 'select' }),
 

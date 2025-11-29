@@ -3,7 +3,8 @@ return {
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
+    -- "nvim-tree/nvim-web-devicons",
+    "DaikyXendo/nvim-material-icon",
     "MunifTanjim/nui.nvim",
   },
   lazy = false,
@@ -30,6 +31,17 @@ return {
         ["q"] = "close_window",
         ["?"] = "show_help",
         ["H"] = "toggle_hidden",
+      },
+      default_component_configs = {
+        icon = {
+          folder_closed = "",
+          folder_open = "",
+          folder_empty = "",
+          default = "",
+        },
+        name = {
+          highlight_opened_files = true,
+        },
       },
     },
   },

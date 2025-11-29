@@ -22,8 +22,10 @@ option_as_alt = "Both"
 # normal.family = "MesloLGS Nerd Font Mono"
 # normal.family = "UbuntuMono Nerd Font"
 # normal.family = "JetBrainsMono Nerd Font"
+# normal.family = "RobotoMono Nerd Font"
 # normal.family = "BlexMono Nerd Font"
 normal.family = "Inconsolata Nerd Font"
+# normal.family = "CascadiaCode Nerd Font"
 
 
 size = 24

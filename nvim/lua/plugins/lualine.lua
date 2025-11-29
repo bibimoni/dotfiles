@@ -1,8 +1,8 @@
 -- plugins/lualine.lua  ── adjust path for your setup
 return {
   "nvim-lualine/lualine.nvim",
-  lazy = false,                                     -- load immediately
-  dependencies = { "nvim-tree/nvim-web-devicons" }, -- optional icons
+  lazy = false,                                       -- load immediately
+  dependencies = { "DaikyXendo/nvim-material-icon" }, -- optional icons
   config = function()
     require("lualine").setup({
       options = {
